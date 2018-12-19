@@ -18,7 +18,7 @@ var app = express();
 
 // Routes
 app.get('/', function (req, res) {
-  res.send('Hello World full CD/CI! [from Michael Leung]');
+  res.send('Hello World full CD/CI both cloud & ground! [from Michael Leung]');
 });
 
 // Create the server
