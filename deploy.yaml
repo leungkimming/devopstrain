@@ -27,6 +27,6 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 14585
+  - port: 4585
   selector:
     app: michaeldevops
