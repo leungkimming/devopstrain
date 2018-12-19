@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: kmleungdevops
+  name: michaeldevops
 spec:
   replicas: 1
   strategy:
@@ -12,21 +12,21 @@ spec:
   template:
     metadata:
       labels:
-        app: kmleungdevops
+        app: michaeldevops
     spec:
       containers:
-      - name: kmleungdevops
-        image: michaelacr.azurecr.io/leungkimming/devopstrain:$BUILD_ID
+      - name: michaeldevops
+        image: docker.io/pleungdev/michaeldevops:$BUILD_ID
         ports:
         - containerPort: 4585
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: kmleungdevops
+  name: michaeldevops
 spec:
   type: LoadBalancer
   ports:
   - port: 14585
   selector:
-    app: kmleungdevops
+    app: michaeldevops
