@@ -15,10 +15,15 @@ var iPortNum = 4585;
 
 var express = require('express');
 var app = express();
+var request = require('request');
 
 // Routes
 app.get('/', function (req, res) {
-  res.send('Hello World full CD/CI both cloud & ground! [from Michael Leung]');
+  request('http://13.76.194.121:45851/api/func2?param=hello', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        res.send('Hello World full CD/CI both cloud & ground! from Micro service: ' + body);
+     }
+  })
 });
 
 // Create the server
